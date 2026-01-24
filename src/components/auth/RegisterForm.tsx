@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Building2, Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { Button, Input } from '@/components/ui';
+import { createClient } from '@/lib/supabase/client';
 
 export function RegisterForm() {
   const router = useRouter();
@@ -52,15 +53,47 @@ export function RegisterForm() {
     if (!validate()) return;
 
     setIsLoading(true);
+    setErrors({});
 
-    // Simulate registration - replace with actual auth logic
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const supabase = createClient();
+
+    // 1. Create user in Supabase Auth
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email: formData.email,
+      password: formData.password,
+      options: {
+        data: {
+          business_name: formData.businessName,
+        },
+      },
+    });
+
+    if (authError) {
+      setErrors({
+        general:
+          authError.message === 'User already registered'
+            ? 'Este correo ya esta registrado. Intenta iniciar sesion.'
+            : authError.message,
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    // Business is created automatically via database trigger
+    // using the business_name from user metadata
 
     router.push('/dashboard');
+    router.refresh();
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {errors.general && (
+        <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-600 text-sm">
+          {errors.general}
+        </div>
+      )}
+
       <div className="relative">
         <Building2 className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
         <Input

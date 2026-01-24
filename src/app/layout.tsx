@@ -10,14 +10,15 @@ const inter = Inter({
 
 const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-archivo",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Stampy - Tarjetas de Lealtad Digitales",
-  description: "Crea tarjetas de lealtad para Apple Wallet y Google Wallet en minutos",
+  description:
+    "Crea tarjetas de lealtad para Apple Wallet y Google Wallet en minutos",
 };
 
 export default function RootLayout({

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui";
+import logoStampy from "../../../public/assets/logos/imagotipo-n.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +17,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/assets/logos/imagotipo-n.png"
+              src={logoStampy}
               alt="Stampy"
-              width={500}
-              height={98}
-              className="h-9 w-auto"
+              className="h-8 w-auto"
               priority
             />
           </Link>
