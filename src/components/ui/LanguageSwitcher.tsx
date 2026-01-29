@@ -23,32 +23,32 @@ export function LanguageSwitcher({ variant = "light" }: LanguageSwitcherProps) {
       <button
         onClick={() => switchLocale("es")}
         className={cn(
-          "px-2 py-1 text-sm font-medium rounded-lg transition-colors",
+          "px-2 py-1 text-sm font-bold rounded-lg transition-colors",
           locale === "es"
             ? variant === "light"
-              ? "bg-brand-500 text-almost-black"
-              : "bg-brand-500 text-almost-black"
+              ? "bg-brand-500 text-white"
+              : "bg-brand-500 text-white"
             : variant === "light"
               ? "text-charcoal hover:bg-gray-100"
               : "text-gray-400 hover:text-white hover:bg-white/10",
         )}
       >
-        ES
+        ES 🇲🇽
       </button>
       <button
         onClick={() => switchLocale("en")}
         className={cn(
-          "px-2 py-1 text-sm font-medium rounded-lg transition-colors",
+          "px-2 py-1 text-sm font-bold rounded-lg transition-colors",
           locale === "en"
             ? variant === "light"
-              ? "bg-brand-500 text-almost-black"
-              : "bg-brand-500 text-almost-black"
+              ? "bg-brand-500 text-white"
+              : "bg-brand-500 text-white"
             : variant === "light"
               ? "text-charcoal hover:bg-gray-100"
               : "text-gray-400 hover:text-white hover:bg-white/10",
         )}
       >
-        EN
+        EN 🇺🇸
       </button>
     </div>
   );
