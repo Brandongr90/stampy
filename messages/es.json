@@ -1,0 +1,367 @@
+{
+  "Metadata": {
+    "title": "Stampy - Tarjetas de Lealtad Digitales",
+    "description": "Crea tarjetas de lealtad para Apple Wallet y Google Wallet en minutos",
+    "pricingTitle": "Precios - Stampy",
+    "pricingDescription": "Planes simples y transparentes para tu negocio",
+    "loginTitle": "Iniciar Sesion - Stampy",
+    "loginDescription": "Inicia sesion en tu cuenta de Stampy",
+    "registerTitle": "Crear Cuenta - Stampy",
+    "registerDescription": "Crea tu cuenta de Stampy y comienza a fidelizar clientes"
+  },
+  "Navigation": {
+    "features": "Funciones",
+    "pricing": "Precios",
+    "login": "Iniciar Sesion",
+    "startFree": "Comenzar Gratis",
+    "toggleMenu": "Toggle menu"
+  },
+  "Hero": {
+    "title": "Tarjetas de Lealtad",
+    "titleHighlight": "Digitales",
+    "titleSuffix": "en Minutos",
+    "subtitle": "Crea programas de lealtad que funcionan con Apple Wallet y Google Wallet. Sin apps, sin complicaciones.",
+    "cta": "Comenzar Gratis",
+    "viewFeatures": "Ver Funciones",
+    "noCreditCard": "Sin tarjeta de credito requerida",
+    "cardTitle": "Cafe Stampy",
+    "cardSubtitle": "Programa de Lealtad",
+    "points": "Puntos",
+    "pointsToReward": "150 puntos para tu proximo cafe gratis",
+    "recentActivity": "Actividad Reciente",
+    "activity1Action": "+50 puntos",
+    "activity1Desc": "Compra en tienda",
+    "activity1Time": "Hoy",
+    "activity2Action": "+25 puntos",
+    "activity2Desc": "Referido exitoso",
+    "activity2Time": "Ayer",
+    "activity3Action": "-500 puntos",
+    "activity3Desc": "Cafe gratis canjeado",
+    "activity3Time": "3 dias",
+    "customersThisMonth": "clientes este mes"
+  },
+  "Features": {
+    "title": "Todo lo que necesitas para",
+    "titleHighlight": "fidelizar",
+    "subtitle": "Herramientas poderosas para crear experiencias de lealtad que tus clientes amaran",
+    "digitalCards": "Tarjetas Digitales",
+    "digitalCardsDesc": "Tarjetas que se agregan directamente a Apple Wallet y Google Wallet. Siempre accesibles.",
+    "pushNotifications": "Notificaciones Push",
+    "pushNotificationsDesc": "Envia promociones y recordatorios directamente a la pantalla de bloqueo de tus clientes.",
+    "geolocation": "Geolocalizacion",
+    "geolocationDesc": "Activa notificaciones cuando tus clientes estan cerca de tu negocio.",
+    "qrScan": "Escaneo QR",
+    "qrScanDesc": "Acumula y canjea puntos con un simple escaneo. Rapido y sin fricciones.",
+    "noNativeApps": "Sin Apps Nativas",
+    "noNativeAppsDesc": "Tus clientes no necesitan descargar nada. Funciona con las wallets existentes.",
+    "advancedAnalytics": "Analytics Avanzado",
+    "advancedAnalyticsDesc": "Metricas detalladas sobre el comportamiento de tus clientes y ROI del programa."
+  },
+  "Pricing": {
+    "title": "Planes simples y",
+    "titleHighlight": "transparentes",
+    "subtitle": "Elige el plan que mejor se adapte a tu negocio. Puedes cambiar en cualquier momento.",
+    "mostPopular": "MAS POPULAR",
+    "monthly": "/mes",
+    "free": {
+      "name": "FREE",
+      "price": "$0",
+      "description": "Perfecto para probar",
+      "feature1": "50 clientes",
+      "feature2": "1 programa",
+      "feature3": "3 cupones",
+      "feature4": "Soporte por email"
+    },
+    "basic": {
+      "name": "BASICO",
+      "price": "$399",
+      "currency": "MXN",
+      "description": "Para negocios en crecimiento",
+      "feature1": "500 clientes",
+      "feature2": "3 programas",
+      "feature3": "Geolocalizacion",
+      "feature4": "Notificaciones push",
+      "feature5": "Soporte prioritario"
+    },
+    "pro": {
+      "name": "PRO",
+      "price": "$799",
+      "currency": "MXN",
+      "description": "Para negocios establecidos",
+      "feature1": "2,000 clientes",
+      "feature2": "10 programas",
+      "feature3": "Analytics avanzado",
+      "feature4": "API completa",
+      "feature5": "Integraciones",
+      "feature6": "Soporte 24/7"
+    },
+    "enterprise": {
+      "name": "ENTERPRISE",
+      "price": "$1,499",
+      "currency": "MXN",
+      "description": "Para grandes empresas",
+      "feature1": "Clientes ilimitados",
+      "feature2": "Programas ilimitados",
+      "feature3": "White label",
+      "feature4": "Manager dedicado",
+      "feature5": "SLA garantizado",
+      "feature6": "Onboarding personalizado"
+    },
+    "startFree": "Comenzar Gratis",
+    "choosePlan": "Elegir Plan"
+  },
+  "Footer": {
+    "description": "La plataforma mas simple para crear tarjetas de lealtad digitales que funcionan con Apple Wallet y Google Wallet.",
+    "product": "Producto",
+    "features": "Funciones",
+    "pricing": "Precios",
+    "integrations": "Integraciones",
+    "api": "API",
+    "company": "Empresa",
+    "about": "Sobre nosotros",
+    "blog": "Blog",
+    "careers": "Carreras",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Terminos",
+    "cookies": "Cookies",
+    "copyright": "Stampy. Todos los derechos reservados.",
+    "madeWith": "Hecho con amor en Mexico"
+  },
+  "Auth": {
+    "login": {
+      "title": "Bienvenido de vuelta",
+      "subtitle": "Ingresa tus datos para acceder a tu cuenta",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "passwordPlaceholder": "Tu contrasena",
+      "rememberMe": "Recordarme",
+      "forgotPassword": "Olvidaste tu contrasena?",
+      "submit": "Iniciar Sesion",
+      "submitting": "Iniciando sesion...",
+      "noAccount": "No tienes cuenta?",
+      "register": "Registrate",
+      "invalidCredentials": "Credenciales incorrectas. Verifica tu correo y contrasena."
+    },
+    "register": {
+      "title": "Crea tu cuenta",
+      "subtitle": "Comienza a crear tarjetas de lealtad en minutos",
+      "businessNamePlaceholder": "Nombre del negocio",
+      "emailPlaceholder": "correo@ejemplo.com",
+      "passwordPlaceholder": "Contrasena (min. 8 caracteres)",
+      "confirmPasswordPlaceholder": "Confirmar contrasena",
+      "termsPrefix": "Acepto los",
+      "termsOfService": "Terminos de Servicio",
+      "termsMiddle": "y la",
+      "privacyPolicy": "Politica de Privacidad",
+      "submit": "Crear Cuenta",
+      "submitting": "Creando cuenta...",
+      "hasAccount": "Ya tienes cuenta?",
+      "login": "Inicia sesion",
+      "errors": {
+        "businessNameRequired": "El nombre del negocio es requerido",
+        "emailRequired": "El correo es requerido",
+        "emailInvalid": "Correo invalido",
+        "passwordRequired": "La contrasena es requerida",
+        "passwordMinLength": "La contrasena debe tener al menos 8 caracteres",
+        "passwordMismatch": "Las contrasenas no coinciden",
+        "userExists": "Este correo ya esta registrado. Intenta iniciar sesion."
+      }
+    }
+  },
+  "Dashboard": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "programs": "Programas",
+      "coupons": "Cupones",
+      "customers": "Clientes",
+      "notifications": "Notificaciones",
+      "analytics": "Analytics",
+      "settings": "Configuracion",
+      "currentPlan": "Plan Actual",
+      "customersUsage": "{used} / {limit} clientes",
+      "logout": "Cerrar Sesion"
+    },
+    "header": {
+      "dashboard": "Dashboard",
+      "programs": "Programas de Lealtad",
+      "newProgram": "Nuevo Programa",
+      "coupons": "Cupones",
+      "customers": "Clientes",
+      "notifications": "Notificaciones",
+      "analytics": "Analytics",
+      "settings": "Configuracion",
+      "searchPlaceholder": "Buscar..."
+    },
+    "home": {
+      "totalCustomers": "Total Clientes",
+      "pointsRedeemed": "Puntos Canjeados",
+      "retentionRate": "Tasa de Retencion",
+      "recurringRevenue": "Ingresos Recurrentes",
+      "recentActivity": "Actividad Reciente",
+      "activities": {
+        "redeemed": "canjeo {points} puntos",
+        "registered": "se registro al programa",
+        "levelUp": "alcanzo nivel {level}",
+        "couponRedeemed": "canjeo un cupon"
+      },
+      "timeAgo": {
+        "minutes": "Hace {count} min",
+        "hours": "Hace {count} hora",
+        "hoursPlural": "Hace {count} horas"
+      }
+    },
+    "programs": {
+      "title": "Programas de Lealtad",
+      "subtitle": "Crea y gestiona tus tarjetas de lealtad",
+      "createProgram": "Crear Programa",
+      "emptyTitle": "No tienes programas de lealtad",
+      "emptyDescription": "Crea tu primer programa para empezar a fidelizar a tus clientes con tarjetas digitales.",
+      "emptyAction": "Crear Programa",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "noDescription": "Sin descripcion",
+      "rewardEquation": "{threshold} {type} = Recompensa",
+      "created": "Creado {date}",
+      "types": {
+        "stamps": "Sellos",
+        "points": "Puntos",
+        "visits": "Visitas"
+      }
+    },
+    "newProgram": {
+      "backToPrograms": "Volver a programas",
+      "title": "Crear Programa de Lealtad",
+      "subtitle": "Configura tu tarjeta de lealtad en 4 simples pasos",
+      "steps": {
+        "type": "Tipo",
+        "reward": "Recompensa",
+        "design": "Diseno",
+        "preview": "Preview"
+      },
+      "step1": {
+        "title": "Selecciona el tipo de programa",
+        "subtitle": "Elige como quieres que tus clientes acumulen recompensas",
+        "stamps": {
+          "name": "Sellos",
+          "description": "Clientes coleccionan sellos por cada compra",
+          "example": "10 sellos = 1 cafe gratis"
+        },
+        "points": {
+          "name": "Puntos",
+          "description": "Clientes acumulan puntos por monto gastado",
+          "example": "100 puntos = $50 de descuento"
+        },
+        "visits": {
+          "name": "Visitas",
+          "description": "Clientes registran visitas al establecimiento",
+          "example": "5 visitas = Postre gratis"
+        }
+      },
+      "step2": {
+        "title": "Configura la recompensa",
+        "subtitle": "Define que obtienen tus clientes al completar su tarjeta",
+        "programName": "Nombre del programa",
+        "programNamePlaceholder": "Ej: Club de Cafe, Puntos Premium",
+        "description": "Descripcion (opcional)",
+        "descriptionPlaceholder": "Ej: Acumula sellos con cada compra",
+        "threshold": "{type} necesarios para recompensa",
+        "rewardDescription": "Descripcion de la recompensa",
+        "rewardDescriptionPlaceholder": "Ej: 1 cafe gratis, 20% de descuento"
+      },
+      "step3": {
+        "title": "Personaliza el diseno",
+        "subtitle": "Elige los colores y estilo de tu tarjeta",
+        "colorScheme": "Esquema de colores",
+        "cardIcon": "Icono de la tarjeta",
+        "colors": {
+          "mint": "Mint",
+          "yellow": "Amarillo",
+          "coral": "Coral",
+          "blue": "Azul",
+          "purple": "Morado",
+          "black": "Negro"
+        }
+      },
+      "step4": {
+        "title": "Vista previa de tu tarjeta",
+        "subtitle": "Asi se vera tu tarjeta en Apple Wallet y Google Wallet",
+        "loyaltyCard": "Tarjeta de Lealtad",
+        "programName": "Nombre del Programa",
+        "summary": "Resumen",
+        "type": "Tipo",
+        "name": "Nombre",
+        "goal": "Meta",
+        "reward": "Recompensa"
+      },
+      "back": "Atras",
+      "next": "Siguiente",
+      "creating": "Creando...",
+      "create": "Crear Programa",
+      "errors": {
+        "notAuthenticated": "No estas autenticado",
+        "businessNotFound": "No se encontro tu negocio",
+        "createError": "Error al crear el programa: {message}"
+      }
+    },
+    "customers": {
+      "searchPlaceholder": "Buscar clientes...",
+      "filters": "Filtros",
+      "tableHeaders": {
+        "customer": "Cliente",
+        "points": "Puntos",
+        "level": "Nivel",
+        "registered": "Registro"
+      },
+      "emptyTitle": "No hay clientes aun",
+      "emptyDescription": "Cuando tus clientes se registren en tu programa de lealtad, apareceran aqui."
+    },
+    "analytics": {
+      "newCustomers": "Nuevos Clientes",
+      "totalRedemptions": "Canjes Totales",
+      "averageValue": "Valor Promedio",
+      "conversionRate": "Tasa de Conversion",
+      "customersByMonth": "Clientes por Mes",
+      "popularRewards": "Recompensas Populares",
+      "redemptions": "{count} canjes",
+      "performanceMetrics": "Metricas de Rendimiento",
+      "customerRetention": "Retencion de Clientes",
+      "programROI": "ROI del Programa",
+      "churnRate": "Tasa de Abandono"
+    },
+    "settings": {
+      "businessInfo": "Informacion del Negocio",
+      "businessName": "Nombre del Negocio",
+      "businessNamePlaceholder": "Nombre de tu negocio",
+      "contactEmail": "Email de Contacto",
+      "contactEmailPlaceholder": "tu@email.com",
+      "saveChanges": "Guardar Cambios",
+      "notifications": "Notificaciones",
+      "notificationNewCustomers": "Nuevos clientes registrados",
+      "notificationRedemptions": "Canjes de recompensas",
+      "notificationWeeklySummary": "Resumen semanal",
+      "notificationLowInventory": "Alertas de bajo inventario",
+      "security": "Seguridad",
+      "changePassword": "Cambiar Contrasena",
+      "setup2FA": "Configurar 2FA",
+      "appearance": "Apariencia",
+      "primaryColor": "Color Principal"
+    }
+  },
+  "Common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Exito",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "none": "Ninguno",
+    "yes": "Si",
+    "no": "No"
+  }
+}

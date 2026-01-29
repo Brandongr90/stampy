@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { Button, LanguageSwitcher } from "@/components/ui";
 import logoStampy from "../../../public/assets/logos/imagotipo-n.png";
 
 export function Navbar() {
+  const t = useTranslations("Navigation");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,32 +32,33 @@ export function Navbar() {
               href="#features"
               className="text-charcoal hover:text-almost-black font-medium transition-colors"
             >
-              Funciones
+              {t("features")}
             </Link>
             <Link
               href="#pricing"
               className="text-charcoal hover:text-almost-black font-medium transition-colors"
             >
-              Precios
+              {t("pricing")}
             </Link>
             <Link
               href="/login"
               className="text-charcoal hover:text-almost-black font-medium transition-colors"
             >
-              Iniciar Sesion
+              {t("login")}
             </Link>
             <Link href="/register">
               <Button variant="primary" size="sm">
-                Comenzar Gratis
+                {t("startFree")}
               </Button>
             </Link>
+            <LanguageSwitcher variant="light" />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-xl hover:bg-gray-100 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={t("toggleMenu")}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -70,27 +73,30 @@ export function Navbar() {
                 className="text-charcoal hover:text-almost-black font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
-                Funciones
+                {t("features")}
               </Link>
               <Link
                 href="#pricing"
                 className="text-charcoal hover:text-almost-black font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
-                Precios
+                {t("pricing")}
               </Link>
               <Link
                 href="/login"
                 className="text-charcoal hover:text-almost-black font-medium py-2"
                 onClick={() => setIsOpen(false)}
               >
-                Iniciar Sesion
+                {t("login")}
               </Link>
               <Link href="/register" onClick={() => setIsOpen(false)}>
                 <Button variant="primary" className="w-full">
-                  Comenzar Gratis
+                  {t("startFree")}
                 </Button>
               </Link>
+              <div className="py-2">
+                <LanguageSwitcher variant="light" />
+              </div>
             </div>
           </div>
         )}

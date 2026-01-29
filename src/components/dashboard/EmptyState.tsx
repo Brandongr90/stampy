@@ -1,7 +1,7 @@
-import React from 'react';
-import Link from 'next/link';
-import { LucideIcon } from 'lucide-react';
-import { Button } from '@/components/ui';
+import React from "react";
+import { LucideIcon } from "lucide-react";
+import { Link } from "@/i18n/navigation";
+import { Button } from "@/components/ui";
 
 interface EmptyStateProps {
   icon: LucideIcon;
@@ -20,10 +20,12 @@ export function EmptyState({
 }: EmptyStateProps) {
   return (
     <div className="flex flex-col items-center justify-center py-16 px-4 text-center">
-      <div className="w-20 h-20 bg-mint-100 rounded-3xl flex items-center justify-center mb-6">
-        <Icon className="w-10 h-10 text-mint-600" />
+      <div className="w-20 h-20 bg-brand-100 rounded-3xl flex items-center justify-center mb-6">
+        <Icon className="w-10 h-10 text-brand-600" />
       </div>
-      <h3 className="text-xl font-display font-bold text-almost-black mb-2">{title}</h3>
+      <h3 className="text-xl font-display font-bold text-almost-black mb-2">
+        {title}
+      </h3>
       <p className="text-charcoal max-w-md mb-6">{description}</p>
       {actionLabel && actionHref && (
         <Link href={actionHref}>

@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
   CreditCard,
@@ -14,22 +12,25 @@ import {
   LogOut,
 } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
-
-const navItems = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/dashboard/programs", label: "Programas", icon: CreditCard },
-  { href: "/dashboard/coupons", label: "Cupones", icon: Ticket },
-  { href: "/dashboard/customers", label: "Clientes", icon: Users },
-  { href: "/dashboard/notifications", label: "Notificaciones", icon: Bell },
-  { href: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
-  { href: "/dashboard/settings", label: "Configuracion", icon: Settings },
-];
 
 export function Sidebar() {
   const pathname = usePathname();
   const router = useRouter();
+  const t = useTranslations("Dashboard.sidebar");
+
+  const navItems = [
+    { href: "/dashboard", label: t("dashboard"), icon: LayoutDashboard },
+    { href: "/dashboard/programs", label: t("programs"), icon: CreditCard },
+    { href: "/dashboard/coupons", label: t("coupons"), icon: Ticket },
+    { href: "/dashboard/customers", label: t("customers"), icon: Users },
+    { href: "/dashboard/notifications", label: t("notifications"), icon: Bell },
+    { href: "/dashboard/analytics", label: t("analytics"), icon: BarChart3 },
+    { href: "/dashboard/settings", label: t("settings"), icon: Settings },
+  ];
 
   const handleLogout = async () => {
     const supabase = createClient();
@@ -77,7 +78,7 @@ export function Sidebar() {
                   className={cn(
                     "flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200",
                     isActive
-                      ? "bg-mint-500 text-almost-black"
+                      ? "bg-brand-500 text-almost-black"
                       : "text-gray-300 hover:text-white hover:bg-white/10",
                   )}
                 >
@@ -93,12 +94,14 @@ export function Sidebar() {
       {/* Bottom Section */}
       <div className="p-4 border-t border-white/10">
         <div className="bg-white/5 rounded-2xl p-4 mb-4">
-          <p className="text-sm text-gray-300 mb-2">Plan Actual</p>
-          <p className="font-semibold text-mint-400">FREE</p>
-          <p className="text-xs text-gray-400 mt-1">0 / 50 clientes</p>
+          <p className="text-sm text-gray-300 mb-2">{t("currentPlan")}</p>
+          <p className="font-semibold text-brand-400">FREE</p>
+          <p className="text-xs text-gray-400 mt-1">
+            {t("customersUsage", { used: 0, limit: 50 })}
+          </p>
           <div className="w-full bg-white/10 rounded-full h-1.5 mt-2">
             <div
-              className="bg-mint-500 rounded-full h-1.5"
+              className="bg-brand-500 rounded-full h-1.5"
               style={{ width: "0%" }}
             />
           </div>
@@ -109,7 +112,7 @@ export function Sidebar() {
           className="w-full flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-200"
         >
           <LogOut className="w-5 h-5" />
-          <span>Cerrar Sesion</span>
+          <span>{t("logout")}</span>
         </button>
       </div>
     </aside>

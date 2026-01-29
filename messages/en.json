@@ -1,0 +1,367 @@
+{
+  "Metadata": {
+    "title": "Stampy - Digital Loyalty Cards",
+    "description": "Create loyalty cards for Apple Wallet and Google Wallet in minutes",
+    "pricingTitle": "Pricing - Stampy",
+    "pricingDescription": "Simple and transparent plans for your business",
+    "loginTitle": "Login - Stampy",
+    "loginDescription": "Log in to your Stampy account",
+    "registerTitle": "Create Account - Stampy",
+    "registerDescription": "Create your Stampy account and start building customer loyalty"
+  },
+  "Navigation": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "login": "Login",
+    "startFree": "Start Free",
+    "toggleMenu": "Toggle menu"
+  },
+  "Hero": {
+    "title": "Digital Loyalty Cards",
+    "titleHighlight": "Digital",
+    "titleSuffix": "in Minutes",
+    "subtitle": "Create loyalty programs that work with Apple Wallet and Google Wallet. No apps, no hassle.",
+    "cta": "Start Free",
+    "viewFeatures": "View Features",
+    "noCreditCard": "No credit card required",
+    "cardTitle": "Stampy Cafe",
+    "cardSubtitle": "Loyalty Program",
+    "points": "Points",
+    "pointsToReward": "150 points to your next free coffee",
+    "recentActivity": "Recent Activity",
+    "activity1Action": "+50 points",
+    "activity1Desc": "In-store purchase",
+    "activity1Time": "Today",
+    "activity2Action": "+25 points",
+    "activity2Desc": "Successful referral",
+    "activity2Time": "Yesterday",
+    "activity3Action": "-500 points",
+    "activity3Desc": "Free coffee redeemed",
+    "activity3Time": "3 days ago",
+    "customersThisMonth": "customers this month"
+  },
+  "Features": {
+    "title": "Everything you need to build",
+    "titleHighlight": "loyalty",
+    "subtitle": "Powerful tools to create loyalty experiences your customers will love",
+    "digitalCards": "Digital Cards",
+    "digitalCardsDesc": "Cards that add directly to Apple Wallet and Google Wallet. Always accessible.",
+    "pushNotifications": "Push Notifications",
+    "pushNotificationsDesc": "Send promotions and reminders directly to your customers' lock screen.",
+    "geolocation": "Geolocation",
+    "geolocationDesc": "Trigger notifications when your customers are near your business.",
+    "qrScan": "QR Scanning",
+    "qrScanDesc": "Earn and redeem points with a simple scan. Fast and frictionless.",
+    "noNativeApps": "No Native Apps",
+    "noNativeAppsDesc": "Your customers don't need to download anything. Works with existing wallets.",
+    "advancedAnalytics": "Advanced Analytics",
+    "advancedAnalyticsDesc": "Detailed metrics on customer behavior and program ROI."
+  },
+  "Pricing": {
+    "title": "Simple and",
+    "titleHighlight": "transparent",
+    "subtitle": "Choose the plan that best fits your business. You can switch anytime.",
+    "mostPopular": "MOST POPULAR",
+    "monthly": "/month",
+    "free": {
+      "name": "FREE",
+      "price": "$0",
+      "description": "Perfect for trying out",
+      "feature1": "50 customers",
+      "feature2": "1 program",
+      "feature3": "3 coupons",
+      "feature4": "Email support"
+    },
+    "basic": {
+      "name": "BASIC",
+      "price": "$399",
+      "currency": "MXN",
+      "description": "For growing businesses",
+      "feature1": "500 customers",
+      "feature2": "3 programs",
+      "feature3": "Geolocation",
+      "feature4": "Push notifications",
+      "feature5": "Priority support"
+    },
+    "pro": {
+      "name": "PRO",
+      "price": "$799",
+      "currency": "MXN",
+      "description": "For established businesses",
+      "feature1": "2,000 customers",
+      "feature2": "10 programs",
+      "feature3": "Advanced analytics",
+      "feature4": "Full API access",
+      "feature5": "Integrations",
+      "feature6": "24/7 support"
+    },
+    "enterprise": {
+      "name": "ENTERPRISE",
+      "price": "$1,499",
+      "currency": "MXN",
+      "description": "For large enterprises",
+      "feature1": "Unlimited customers",
+      "feature2": "Unlimited programs",
+      "feature3": "White label",
+      "feature4": "Dedicated manager",
+      "feature5": "Guaranteed SLA",
+      "feature6": "Personalized onboarding"
+    },
+    "startFree": "Start Free",
+    "choosePlan": "Choose Plan"
+  },
+  "Footer": {
+    "description": "The simplest platform to create digital loyalty cards that work with Apple Wallet and Google Wallet.",
+    "product": "Product",
+    "features": "Features",
+    "pricing": "Pricing",
+    "integrations": "Integrations",
+    "api": "API",
+    "company": "Company",
+    "about": "About us",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "copyright": "Stampy. All rights reserved.",
+    "madeWith": "Made with love in Mexico"
+  },
+  "Auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Enter your credentials to access your account",
+      "emailPlaceholder": "email@example.com",
+      "passwordPlaceholder": "Your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot your password?",
+      "submit": "Login",
+      "submitting": "Logging in...",
+      "noAccount": "Don't have an account?",
+      "register": "Sign up",
+      "invalidCredentials": "Invalid credentials. Please check your email and password."
+    },
+    "register": {
+      "title": "Create your account",
+      "subtitle": "Start creating loyalty cards in minutes",
+      "businessNamePlaceholder": "Business name",
+      "emailPlaceholder": "email@example.com",
+      "passwordPlaceholder": "Password (min. 8 characters)",
+      "confirmPasswordPlaceholder": "Confirm password",
+      "termsPrefix": "I accept the",
+      "termsOfService": "Terms of Service",
+      "termsMiddle": "and the",
+      "privacyPolicy": "Privacy Policy",
+      "submit": "Create Account",
+      "submitting": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "login": "Log in",
+      "errors": {
+        "businessNameRequired": "Business name is required",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email",
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordMismatch": "Passwords do not match",
+        "userExists": "This email is already registered. Try logging in."
+      }
+    }
+  },
+  "Dashboard": {
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "programs": "Programs",
+      "coupons": "Coupons",
+      "customers": "Customers",
+      "notifications": "Notifications",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "currentPlan": "Current Plan",
+      "customersUsage": "{used} / {limit} customers",
+      "logout": "Log Out"
+    },
+    "header": {
+      "dashboard": "Dashboard",
+      "programs": "Loyalty Programs",
+      "newProgram": "New Program",
+      "coupons": "Coupons",
+      "customers": "Customers",
+      "notifications": "Notifications",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "searchPlaceholder": "Search..."
+    },
+    "home": {
+      "totalCustomers": "Total Customers",
+      "pointsRedeemed": "Points Redeemed",
+      "retentionRate": "Retention Rate",
+      "recurringRevenue": "Recurring Revenue",
+      "recentActivity": "Recent Activity",
+      "activities": {
+        "redeemed": "redeemed {points} points",
+        "registered": "registered to the program",
+        "levelUp": "reached {level} level",
+        "couponRedeemed": "redeemed a coupon"
+      },
+      "timeAgo": {
+        "minutes": "{count} min ago",
+        "hours": "{count} hour ago",
+        "hoursPlural": "{count} hours ago"
+      }
+    },
+    "programs": {
+      "title": "Loyalty Programs",
+      "subtitle": "Create and manage your loyalty cards",
+      "createProgram": "Create Program",
+      "emptyTitle": "You don't have any loyalty programs",
+      "emptyDescription": "Create your first program to start building customer loyalty with digital cards.",
+      "emptyAction": "Create Program",
+      "active": "Active",
+      "inactive": "Inactive",
+      "noDescription": "No description",
+      "rewardEquation": "{threshold} {type} = Reward",
+      "created": "Created {date}",
+      "types": {
+        "stamps": "Stamps",
+        "points": "Points",
+        "visits": "Visits"
+      }
+    },
+    "newProgram": {
+      "backToPrograms": "Back to programs",
+      "title": "Create Loyalty Program",
+      "subtitle": "Configure your loyalty card in 4 simple steps",
+      "steps": {
+        "type": "Type",
+        "reward": "Reward",
+        "design": "Design",
+        "preview": "Preview"
+      },
+      "step1": {
+        "title": "Select program type",
+        "subtitle": "Choose how you want your customers to earn rewards",
+        "stamps": {
+          "name": "Stamps",
+          "description": "Customers collect stamps for each purchase",
+          "example": "10 stamps = 1 free coffee"
+        },
+        "points": {
+          "name": "Points",
+          "description": "Customers earn points based on amount spent",
+          "example": "100 points = $50 discount"
+        },
+        "visits": {
+          "name": "Visits",
+          "description": "Customers register visits to your establishment",
+          "example": "5 visits = Free dessert"
+        }
+      },
+      "step2": {
+        "title": "Configure the reward",
+        "subtitle": "Define what your customers get when they complete their card",
+        "programName": "Program name",
+        "programNamePlaceholder": "E.g.: Coffee Club, Premium Points",
+        "description": "Description (optional)",
+        "descriptionPlaceholder": "E.g.: Collect stamps with every purchase",
+        "threshold": "{type} needed for reward",
+        "rewardDescription": "Reward description",
+        "rewardDescriptionPlaceholder": "E.g.: 1 free coffee, 20% discount"
+      },
+      "step3": {
+        "title": "Customize the design",
+        "subtitle": "Choose the colors and style of your card",
+        "colorScheme": "Color scheme",
+        "cardIcon": "Card icon",
+        "colors": {
+          "mint": "Mint",
+          "yellow": "Yellow",
+          "coral": "Coral",
+          "blue": "Blue",
+          "purple": "Purple",
+          "black": "Black"
+        }
+      },
+      "step4": {
+        "title": "Preview your card",
+        "subtitle": "This is how your card will look in Apple Wallet and Google Wallet",
+        "loyaltyCard": "Loyalty Card",
+        "programName": "Program Name",
+        "summary": "Summary",
+        "type": "Type",
+        "name": "Name",
+        "goal": "Goal",
+        "reward": "Reward"
+      },
+      "back": "Back",
+      "next": "Next",
+      "creating": "Creating...",
+      "create": "Create Program",
+      "errors": {
+        "notAuthenticated": "You are not authenticated",
+        "businessNotFound": "Your business was not found",
+        "createError": "Error creating program: {message}"
+      }
+    },
+    "customers": {
+      "searchPlaceholder": "Search customers...",
+      "filters": "Filters",
+      "tableHeaders": {
+        "customer": "Customer",
+        "points": "Points",
+        "level": "Level",
+        "registered": "Registered"
+      },
+      "emptyTitle": "No customers yet",
+      "emptyDescription": "When your customers register for your loyalty program, they will appear here."
+    },
+    "analytics": {
+      "newCustomers": "New Customers",
+      "totalRedemptions": "Total Redemptions",
+      "averageValue": "Average Value",
+      "conversionRate": "Conversion Rate",
+      "customersByMonth": "Customers by Month",
+      "popularRewards": "Popular Rewards",
+      "redemptions": "{count} redemptions",
+      "performanceMetrics": "Performance Metrics",
+      "customerRetention": "Customer Retention",
+      "programROI": "Program ROI",
+      "churnRate": "Churn Rate"
+    },
+    "settings": {
+      "businessInfo": "Business Information",
+      "businessName": "Business Name",
+      "businessNamePlaceholder": "Your business name",
+      "contactEmail": "Contact Email",
+      "contactEmailPlaceholder": "you@email.com",
+      "saveChanges": "Save Changes",
+      "notifications": "Notifications",
+      "notificationNewCustomers": "New customer registrations",
+      "notificationRedemptions": "Reward redemptions",
+      "notificationWeeklySummary": "Weekly summary",
+      "notificationLowInventory": "Low inventory alerts",
+      "security": "Security",
+      "changePassword": "Change Password",
+      "setup2FA": "Set up 2FA",
+      "appearance": "Appearance",
+      "primaryColor": "Primary Color"
+    }
+  },
+  "Common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "none": "None",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

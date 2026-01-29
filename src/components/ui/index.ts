@@ -4,3 +4,4 @@ export { Input } from './Input';
 export { Badge } from './Badge';
 export { Spinner } from './Spinner';
 export { Select } from './Select';
+export { LanguageSwitcher } from './LanguageSwitcher';
