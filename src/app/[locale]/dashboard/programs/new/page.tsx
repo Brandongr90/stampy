@@ -38,17 +38,16 @@ const initialData: ProgramData = {
   description: "",
   rewardThreshold: 10,
   rewardDescription: "",
-  primaryColor: "#8B5CF6",
-  secondaryColor: "#0F0F0F",
+  primaryColor: "#3b82f6",
+  secondaryColor: "#FFFFFF",
   iconStyle: "coffee",
 };
 
 const colorPresets = [
-  { primary: "#8B5CF6", secondary: "#FFFFFF", name: "violet" },
-  { primary: "#86EFAC", secondary: "#0F0F0F", name: "mint" },
+  { primary: "#3b82f6", secondary: "#FFFFFF", name: "blue" },
+  { primary: "#10b981", secondary: "#0F0F0F", name: "green" },
   { primary: "#FCD34D", secondary: "#0F0F0F", name: "yellow" },
   { primary: "#F87171", secondary: "#FFFFFF", name: "coral" },
-  { primary: "#60A5FA", secondary: "#0F0F0F", name: "blue" },
   { primary: "#A78BFA", secondary: "#FFFFFF", name: "purple" },
   { primary: "#0F0F0F", secondary: "#FFFFFF", name: "black" },
 ];

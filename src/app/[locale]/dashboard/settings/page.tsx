@@ -117,7 +117,7 @@ export default function SettingsPage() {
             {t("primaryColor")}
           </label>
           <div className="flex gap-3">
-            {["#8B5CF6", "#60A5FA", "#F472B6", "#FBBF24", "#A78BFA"].map(
+            {["#3b82f6", "#10b981", "#F472B6", "#FBBF24", "#8B5CF6"].map(
               (color) => (
                 <button
                   key={color}
