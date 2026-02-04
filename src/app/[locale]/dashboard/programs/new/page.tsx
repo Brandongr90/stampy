@@ -463,7 +463,7 @@ export default function NewProgramPage() {
 
             <div className="flex justify-center">
               <div
-                className="w-80 rounded-2xl overflow-hidden shadow-xl"
+                className="w-full max-w-[320px] rounded-2xl overflow-hidden shadow-xl"
                 style={{ backgroundColor: data.primaryColor }}
               >
                 <div className="p-6">

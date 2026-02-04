@@ -1,4 +1,5 @@
-export { Sidebar } from './Sidebar';
-export { Header } from './Header';
-export { StatCard } from './StatCard';
-export { EmptyState } from './EmptyState';
+export { Sidebar } from "./Sidebar";
+export { Header } from "./Header";
+export { StatCard } from "./StatCard";
+export { EmptyState } from "./EmptyState";
+export { SidebarProvider, useSidebar } from "./SidebarProvider";

@@ -89,7 +89,7 @@ export default function DashboardPage() {
             created_at,
             metadata,
             customer:customers(name, email)
-          `
+          `,
           )
           .eq("business_id", business.id)
           .order("created_at", { ascending: false })
@@ -115,8 +115,8 @@ export default function DashboardPage() {
         activityResult.data?.map((event) => {
           const customerData = event.customer as unknown;
           const customer = Array.isArray(customerData)
-            ? customerData[0] as { name: string; email: string } | undefined
-            : customerData as { name: string; email: string } | null;
+            ? (customerData[0] as { name: string; email: string } | undefined)
+            : (customerData as { name: string; email: string } | null);
           return {
             id: event.id,
             eventType: event.event_type,
@@ -222,9 +222,7 @@ export default function DashboardPage() {
     <div className="space-y-8">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-almost-black">
-            {t("title")}
-          </h1>
+          <h1 className="text-2xl font-bold text-almost-black">{t("title")}</h1>
           <p className="text-gray-500 mt-1">{t("subtitle")}</p>
         </div>
         <Link href="/dashboard/programs/new">
@@ -276,17 +274,22 @@ export default function DashboardPage() {
             {recentActivity.map((activity) => (
               <div
                 key={activity.id}
-                className="flex items-center justify-between py-3 border-b border-gray-100 last:border-0"
+                className="flex items-center justify-between gap-4 py-3 border-b border-gray-100 last:border-0"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 min-w-0">
                   <div className="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center">
                     <span className="text-brand-700 font-semibold text-sm">
-                      {getInitials(activity.customerName, activity.customerEmail)}
+                      {getInitials(
+                        activity.customerName,
+                        activity.customerEmail,
+                      )}
                     </span>
                   </div>
-                  <div>
-                    <p className="font-medium text-almost-black">
-                      {activity.customerName || activity.customerEmail || t("unknownCustomer")}
+                  <div className="min-w-0">
+                    <p className="font-medium text-almost-black truncate">
+                      {activity.customerName ||
+                        activity.customerEmail ||
+                        t("unknownCustomer")}
                     </p>
                     <p className="text-sm text-gray-500">
                       {getActivityDescription(activity)}

@@ -116,7 +116,7 @@ export default function ScanPage() {
           design_config,
           business_id
         )
-      `
+      `,
       )
       .ilike("serial_number", `%${searchTerm}%`)
       .limit(1);
@@ -157,7 +157,7 @@ export default function ScanPage() {
               design_config,
               business_id
             )
-          `
+          `,
           )
           .eq("customer_id", customerByEmail[0].id)
           .limit(1);
@@ -185,12 +185,19 @@ export default function ScanPage() {
       type: string;
       reward_threshold: number;
       reward_description: string;
-      design_config: { primaryColor: string; secondaryColor: string; iconStyle: string } | null;
+      design_config: {
+        primaryColor: string;
+        secondaryColor: string;
+        iconStyle: string;
+      } | null;
       business_id: string;
     };
 
     // Verify the card belongs to this business
-    if (customer.business_id !== business.id || program.business_id !== business.id) {
+    if (
+      customer.business_id !== business.id ||
+      program.business_id !== business.id
+    ) {
       setError(t("errors.notFound"));
       setIsSearching(false);
       return;
@@ -286,7 +293,7 @@ export default function ScanPage() {
     setSuccessMessage(
       isPoints
         ? t("success.pointsAdded", { amount: amountToAdd })
-        : t("success.stampAdded")
+        : t("success.stampAdded"),
     );
     setIsProcessing(false);
   };
@@ -313,8 +320,14 @@ export default function ScanPage() {
 
     const newValue = currentValue - customerCard.rewardThreshold;
     const updateData = isPoints
-      ? { current_points: newValue, total_rewards_redeemed: customerCard.totalRewardsRedeemed + 1 }
-      : { current_stamps: newValue, total_rewards_redeemed: customerCard.totalRewardsRedeemed + 1 };
+      ? {
+          current_points: newValue,
+          total_rewards_redeemed: customerCard.totalRewardsRedeemed + 1,
+        }
+      : {
+          current_stamps: newValue,
+          total_rewards_redeemed: customerCard.totalRewardsRedeemed + 1,
+        };
 
     const { error: updateError } = await supabase
       .from("loyalty_cards")
@@ -402,7 +415,9 @@ export default function ScanPage() {
       <Card className="p-6">
         <div className="flex items-center gap-2 mb-4">
           <ScanLine className="w-5 h-5 text-brand-600" />
-          <h2 className="font-semibold text-almost-black">{t("searchTitle")}</h2>
+          <h2 className="font-semibold text-almost-black">
+            {t("searchTitle")}
+          </h2>
         </div>
 
         <div className="flex gap-3">
@@ -441,110 +456,128 @@ export default function ScanPage() {
       {customerCard && (
         <Card className="overflow-hidden">
           {/* Card Preview */}
-          <div
-            className="p-6"
-            style={{
-              backgroundColor: customerCard.designConfig?.primaryColor || "#3b82f6",
-            }}
-          >
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <p
-                  className="text-sm opacity-80"
-                  style={{
-                    color: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                  }}
-                >
-                  {customerCard.programName}
-                </p>
-                <h3
-                  className="text-xl font-bold"
-                  style={{
-                    color: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                  }}
-                >
-                  {customerCard.customerName || customerCard.customerEmail}
-                </h3>
-              </div>
-              <span className="text-3xl">
-                {iconStyles[customerCard.designConfig?.iconStyle || "star"] || "⭐"}
-              </span>
-            </div>
-
-            {/* Progress Display */}
-            <div className="mb-4">
-              <div className="flex justify-between text-sm mb-2">
-                <span
-                  style={{
-                    color: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                  }}
-                >
-                  {t("progress")}
-                </span>
-                <span
-                  className="font-bold"
-                  style={{
-                    color: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                  }}
-                >
-                  {currentProgress} / {customerCard.rewardThreshold}
-                </span>
-              </div>
-              <div
-                className="h-3 rounded-full overflow-hidden"
-                style={{
-                  backgroundColor: `${customerCard.designConfig?.secondaryColor || "#FFFFFF"}30`,
-                }}
-              >
-                <div
-                  className="h-full rounded-full transition-all duration-500"
-                  style={{
-                    width: `${progressPercent}%`,
-                    backgroundColor: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Stamps/Points Grid */}
-            {customerCard.programType !== "points" && (
-              <div className="grid grid-cols-5 gap-2 mb-4">
-                {Array.from({ length: customerCard.rewardThreshold }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="aspect-square rounded-lg border-2 flex items-center justify-center"
-                    style={{
-                      borderColor: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                      borderStyle: i < currentProgress ? "solid" : "dashed",
-                      opacity: i < currentProgress ? 1 : 0.4,
-                    }}
-                  >
-                    {i < currentProgress && (
-                      <Check
-                        className="w-5 h-5"
-                        style={{
-                          color: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                        }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Reward Info */}
+          <div className="p-6 bg-gray-50 flex justify-center">
             <div
-              className="text-center py-3 rounded-xl"
+              className="w-full max-w-[320px] rounded-2xl shadow-xl p-6"
               style={{
-                backgroundColor: customerCard.designConfig?.secondaryColor || "#FFFFFF",
-                color: customerCard.designConfig?.primaryColor || "#3b82f6",
+                backgroundColor:
+                  customerCard.designConfig?.primaryColor || "#3b82f6",
               }}
             >
-              <p className="text-sm font-medium">
-                {customerCard.rewardThreshold}{" "}
-                {customerCard.programType === "points" ? t("points") : t("stamps")} ={" "}
-                {customerCard.rewardDescription}
-              </p>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <p
+                    className="text-sm opacity-80"
+                    style={{
+                      color:
+                        customerCard.designConfig?.secondaryColor || "#FFFFFF",
+                    }}
+                  >
+                    {customerCard.programName}
+                  </p>
+                  <h3
+                    className="text-xl font-bold"
+                    style={{
+                      color:
+                        customerCard.designConfig?.secondaryColor || "#FFFFFF",
+                    }}
+                  >
+                    {customerCard.customerName || customerCard.customerEmail}
+                  </h3>
+                </div>
+                <span className="text-3xl">
+                  {iconStyles[customerCard.designConfig?.iconStyle || "star"] ||
+                    "⭐"}
+                </span>
+              </div>
+
+              {/* Progress Display */}
+              <div className="mb-4">
+                <div className="flex justify-between text-sm mb-2">
+                  <span
+                    style={{
+                      color:
+                        customerCard.designConfig?.secondaryColor || "#FFFFFF",
+                    }}
+                  >
+                    {t("progress")}
+                  </span>
+                  <span
+                    className="font-bold"
+                    style={{
+                      color:
+                        customerCard.designConfig?.secondaryColor || "#FFFFFF",
+                    }}
+                  >
+                    {currentProgress} / {customerCard.rewardThreshold}
+                  </span>
+                </div>
+                <div
+                  className="h-3 rounded-full overflow-hidden"
+                  style={{
+                    backgroundColor: `${customerCard.designConfig?.secondaryColor || "#FFFFFF"}30`,
+                  }}
+                >
+                  <div
+                    className="h-full rounded-full transition-all duration-500"
+                    style={{
+                      width: `${progressPercent}%`,
+                      backgroundColor:
+                        customerCard.designConfig?.secondaryColor || "#FFFFFF",
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Stamps/Points Grid */}
+              {customerCard.programType !== "points" && (
+                <div className="grid grid-cols-5 gap-2 mb-4">
+                  {Array.from({ length: customerCard.rewardThreshold }).map(
+                    (_, i) => (
+                      <div
+                        key={i}
+                        className="aspect-square rounded-lg border-2 flex items-center justify-center"
+                        style={{
+                          borderColor:
+                            customerCard.designConfig?.secondaryColor ||
+                            "#FFFFFF",
+                          borderStyle: i < currentProgress ? "solid" : "dashed",
+                          opacity: i < currentProgress ? 1 : 0.4,
+                        }}
+                      >
+                        {i < currentProgress && (
+                          <Check
+                            className="w-5 h-5"
+                            style={{
+                              color:
+                                customerCard.designConfig?.secondaryColor ||
+                                "#FFFFFF",
+                            }}
+                          />
+                        )}
+                      </div>
+                    ),
+                  )}
+                </div>
+              )}
+
+              {/* Reward Info */}
+              <div
+                className="text-center py-3 rounded-xl"
+                style={{
+                  backgroundColor:
+                    customerCard.designConfig?.secondaryColor || "#FFFFFF",
+                  color: customerCard.designConfig?.primaryColor || "#3b82f6",
+                }}
+              >
+                <p className="text-sm font-medium">
+                  {customerCard.rewardThreshold}{" "}
+                  {customerCard.programType === "points"
+                    ? t("points")
+                    : t("stamps")}{" "}
+                  = {customerCard.rewardDescription}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -587,7 +620,9 @@ export default function ScanPage() {
                 {customerCard.programType === "points" && (
                   <div className="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
                     <button
-                      onClick={() => setPointsToAdd(Math.max(1, pointsToAdd - 1))}
+                      onClick={() =>
+                        setPointsToAdd(Math.max(1, pointsToAdd - 1))
+                      }
                       className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
                     >
                       <Minus className="w-4 h-4" />

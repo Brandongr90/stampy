@@ -86,7 +86,7 @@ export default function CustomersPage() {
               type
             )
           )
-        `
+        `,
         )
         .eq("business_id", business.id)
         .order("created_at", { ascending: false });
@@ -111,8 +111,8 @@ export default function CustomersPage() {
           const firstCard = cards?.[0];
           const programData = firstCard?.loyalty_programs;
           const program = Array.isArray(programData)
-            ? programData[0] as { name: string; type: string } | undefined
-            : programData as { name: string; type: string } | null;
+            ? (programData[0] as { name: string; type: string } | undefined)
+            : (programData as { name: string; type: string } | null);
 
           return {
             id: customer.id,
@@ -133,7 +133,7 @@ export default function CustomersPage() {
                 }
               : null,
           };
-        }
+        },
       );
 
       setCustomers(formattedCustomers);
@@ -218,15 +218,15 @@ export default function CustomersPage() {
         <p className="text-gray-500 mt-1">{t("subtitle")}</p>
       </div>
 
-      <div className="flex items-center justify-between">
-        <div className="relative">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="relative w-full sm:w-auto">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
           <input
             type="text"
             placeholder={t("searchPlaceholder")}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-80 pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 transition-colors"
+            className="w-full sm:w-80 pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-brand-500 transition-colors"
           />
         </div>
         <div className="text-sm text-gray-500">
@@ -235,123 +235,129 @@ export default function CustomersPage() {
       </div>
 
       <div className="bg-white rounded-3xl border border-gray-200 shadow-soft overflow-hidden">
-        <table className="w-full">
-          <thead>
-            <tr className="border-b border-gray-200 bg-gray-50">
-              <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
-                {t("tableHeaders.customer")}
-              </th>
-              <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
-                {t("tableHeaders.program")}
-              </th>
-              <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
-                {t("tableHeaders.progress")}
-              </th>
-              <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
-                {t("tableHeaders.status")}
-              </th>
-              <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
-                {t("tableHeaders.registered")}
-              </th>
-              <th className="text-right px-6 py-4 text-sm font-semibold text-gray-600"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredCustomers.map((customer) => (
-              <tr
-                key={customer.id}
-                className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
-              >
-                <td className="px-6 py-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center">
-                      <span className="text-brand-700 font-semibold text-sm">
-                        {getInitials(customer.name, customer.email)}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-almost-black">
-                        {customer.name || t("noName")}
-                      </p>
-                      <p className="text-sm text-gray-500">{customer.email}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-4">
-                  {customer.card ? (
-                    <div className="flex items-center gap-2">
-                      {customer.card.programType === "stamps" ? (
-                        <Stamp className="w-4 h-4 text-gray-400" />
-                      ) : (
-                        <Star className="w-4 h-4 text-gray-400" />
-                      )}
-                      <span className="text-sm text-gray-700">
-                        {customer.card.programName}
-                      </span>
-                    </div>
-                  ) : (
-                    <span className="text-sm text-gray-400">-</span>
-                  )}
-                </td>
-                <td className="px-6 py-4">
-                  <span className="font-semibold text-almost-black">
-                    {getProgressLabel(customer)}
-                  </span>
-                </td>
-                <td className="px-6 py-4">
-                  {customer.card ? (
-                    <Badge
-                      variant={
-                        customer.card.status === "active" ? "success" : "default"
-                      }
-                    >
-                      {customer.card.status === "active"
-                        ? t("statusActive")
-                        : t("statusInactive")}
-                    </Badge>
-                  ) : (
-                    <Badge variant="default">{t("noCard")}</Badge>
-                  )}
-                </td>
-                <td className="px-6 py-4">
-                  <div className="flex items-center gap-2 text-gray-500">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-sm">
-                      {formatDate(customer.createdAt)}
-                    </span>
-                  </div>
-                </td>
-                <td className="px-6 py-4 text-right">
-                  <DropdownMenu
-                    trigger={
-                      <MoreHorizontal className="w-5 h-5 text-gray-400" />
-                    }
-                    items={[
-                      {
-                        label: t("viewDetails"),
-                        icon: <Eye className="w-4 h-4" />,
-                        onClick: () => {
-                          // TODO: Implementar vista detallada
-                          console.log("View customer:", customer.id);
-                        },
-                      },
-                      {
-                        label: t("sendEmail"),
-                        icon: <Mail className="w-4 h-4" />,
-                        onClick: () => {
-                          if (customer.email) {
-                            window.location.href = `mailto:${customer.email}`;
-                          }
-                        },
-                        disabled: !customer.email,
-                      },
-                    ]}
-                  />
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[800px]">
+            <thead>
+              <tr className="border-b border-gray-200 bg-gray-50">
+                <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
+                  {t("tableHeaders.customer")}
+                </th>
+                <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
+                  {t("tableHeaders.program")}
+                </th>
+                <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
+                  {t("tableHeaders.progress")}
+                </th>
+                <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
+                  {t("tableHeaders.status")}
+                </th>
+                <th className="text-left px-6 py-4 text-sm font-semibold text-gray-600">
+                  {t("tableHeaders.registered")}
+                </th>
+                <th className="text-right px-6 py-4 text-sm font-semibold text-gray-600"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filteredCustomers.map((customer) => (
+                <tr
+                  key={customer.id}
+                  className="border-b border-gray-100 hover:bg-gray-50 transition-colors"
+                >
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-brand-100 rounded-full flex items-center justify-center">
+                        <span className="text-brand-700 font-semibold text-sm">
+                          {getInitials(customer.name, customer.email)}
+                        </span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-almost-black">
+                          {customer.name || t("noName")}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          {customer.email}
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4">
+                    {customer.card ? (
+                      <div className="flex items-center gap-2">
+                        {customer.card.programType === "stamps" ? (
+                          <Stamp className="w-4 h-4 text-gray-400" />
+                        ) : (
+                          <Star className="w-4 h-4 text-gray-400" />
+                        )}
+                        <span className="text-sm text-gray-700">
+                          {customer.card.programName}
+                        </span>
+                      </div>
+                    ) : (
+                      <span className="text-sm text-gray-400">-</span>
+                    )}
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className="font-semibold text-almost-black">
+                      {getProgressLabel(customer)}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4">
+                    {customer.card ? (
+                      <Badge
+                        variant={
+                          customer.card.status === "active"
+                            ? "success"
+                            : "default"
+                        }
+                      >
+                        {customer.card.status === "active"
+                          ? t("statusActive")
+                          : t("statusInactive")}
+                      </Badge>
+                    ) : (
+                      <Badge variant="default">{t("noCard")}</Badge>
+                    )}
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-2 text-gray-500">
+                      <Calendar className="w-4 h-4" />
+                      <span className="text-sm">
+                        {formatDate(customer.createdAt)}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-right">
+                    <DropdownMenu
+                      trigger={
+                        <MoreHorizontal className="w-5 h-5 text-gray-400" />
+                      }
+                      items={[
+                        {
+                          label: t("viewDetails"),
+                          icon: <Eye className="w-4 h-4" />,
+                          onClick: () => {
+                            // TODO: Implementar vista detallada
+                            console.log("View customer:", customer.id);
+                          },
+                        },
+                        {
+                          label: t("sendEmail"),
+                          icon: <Mail className="w-4 h-4" />,
+                          onClick: () => {
+                            if (customer.email) {
+                              window.location.href = `mailto:${customer.email}`;
+                            }
+                          },
+                          disabled: !customer.email,
+                        },
+                      ]}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         {filteredCustomers.length === 0 && searchTerm && (
           <div className="text-center py-12">
