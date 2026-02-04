@@ -4,6 +4,7 @@ import React from "react";
 import {
   LayoutDashboard,
   CreditCard,
+  ScanLine,
   Ticket,
   Users,
   Bell,
@@ -25,6 +26,7 @@ export function Sidebar() {
   const navItems = [
     { href: "/dashboard", label: t("dashboard"), icon: LayoutDashboard },
     { href: "/dashboard/programs", label: t("programs"), icon: CreditCard },
+    { href: "/dashboard/scan", label: t("scan"), icon: ScanLine },
     { href: "/dashboard/coupons", label: t("coupons"), icon: Ticket },
     { href: "/dashboard/customers", label: t("customers"), icon: Users },
     { href: "/dashboard/notifications", label: t("notifications"), icon: Bell },
@@ -78,7 +80,7 @@ export function Sidebar() {
                   className={cn(
                     "flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200",
                     isActive
-                      ? "bg-brand-500 text-almost-black"
+                      ? "bg-brand-500 text-white"
                       : "text-gray-300 hover:text-white hover:bg-white/10",
                   )}
                 >

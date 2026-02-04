@@ -5,3 +5,5 @@ export { Badge } from './Badge';
 export { Spinner } from './Spinner';
 export { Select } from './Select';
 export { LanguageSwitcher } from './LanguageSwitcher';
+export { DropdownMenu } from './DropdownMenu';
+export { Modal } from './Modal';
